@@ -7,15 +7,15 @@
 }
 
 #play_area{
-	
+	margin-top: 20px;
 	margin: auto;
 	display: flex;
 	flex-wrap:wrap;
 	flex-direction: row;
 	justify-content: center;
-	border:1px 
 	solid #FFF;
 	position: relative;
+	z-index: 2;
 
 }
 .grid{
@@ -30,7 +30,8 @@
     padding: 0;
     overflow: hidden;
     border: 1px solid #e7e7e7;
-    background-color: #f3f3f3;
+    background-color: #FFFFFF;
+	border-radius:10px ;
 }
 
 #menu li {
@@ -55,9 +56,20 @@
     background-color: #4CAF50;
 }
 
+#area{
+	list-style-type: none;
+    padding: 30px;
+    margin-top: 20px;
+    overflow: hidden;
+    border: 1px solid #e7e7e7;
+    background-color: #FFFFFF;
+	border-radius:10px ;
+}
+
 #pannel{
-	list-style-type:;
+	list-style-type:none;
 	margin:auto;
+	z-index: 3;
 
 }
 #pannel li{
@@ -71,3 +83,21 @@
 #level {
 	float: left;
 }
+
+#tip{
+	float: right;
+	margin-right: 5%;
+	
+}
+a{
+	cursor:pointer
+}
+
+ul li{
+	list-style-type:none;
+}
+
+body {
+    background: #e9ecf3;
+}
+

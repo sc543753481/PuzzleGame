@@ -1,24 +1,12 @@
-/* 
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
-Title : Assignment 1 Sliding Block Puzzle
-Author : 
-Created : 
-Modified : 
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
-*/
 
-// Add any other global variables you may need here.
-/**
- * Creates all the tiles necessary.
- * @return undefined
- */
 
 window.onload = function () {
 	up = 1
 	down = 2
 	left = 3;
 	right = 4;
-	setLevel(2,20);
+	setLevel(3,20);
+	showTip()
 }
 
 function setLevel(sz,lv){
@@ -259,16 +247,15 @@ function IsNotWiggle(dir,ldir){
 }
 
 
-function showHelp(){
-	$("#help").fadeIn(1500);
-}
+
 function showData(){
 	$("#panpart").fadeIn(1500);
 	$("#score").fadeIn(1500);
 	$("#step").fadeIn(1500);
 }
+
 function showTip(){
-	$("#tip").fadeIn(1500);
+	$("#tip").fadeIn();
 }
 
 function go(){
@@ -397,7 +384,7 @@ function AstarCore(){
 		var ctn = Cantor(top);
 		visit[counter++] = ctn;
 		if(counter>65000&&size>=4||counter>90000&&size<4){
-			alert("out of range of A* search, it will be a long time");
+			alert("搜索超时");
 			return 0;
 		}
 		
@@ -447,9 +434,6 @@ function IsVisited(number){
 async function showResult(){
 	AstarLoad();
 	var result = AstarCore();
-	$("#Analysis").show();
-	$("#CantorNum").text("steps of shortest way: "+result.toString())
-	$("#VisitNum").text("Visited path: "+ visit.length.toString())
 	while(!bestWay.isEmpty()){
 		var n = bestWay.peek();
 		bestWay.pop();
